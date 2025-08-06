@@ -66,3 +66,107 @@ export interface UpdateRouteRequest {
   companyId: number;
   license?: File;
 }
+
+export interface Customer {
+  customerId: string;
+  customerName: string;
+  customerEmail: string;
+  customerPhone: string | null;
+  ticketId: string | null;
+  ticketStatus: number | null;
+}
+
+export interface CustomerResponse {
+  data: Customer[];
+  page: number;
+  amount: number;
+  totalPage: number;
+  totalCount: number;
+}
+
+export interface Station {
+  id: number;
+  stationId: string;
+  name: string;
+  locationName: string;
+  locationId?: number;
+  status: number;
+  isDeleted: boolean;
+  stationName?: string;
+  address?: string;
+  city?: string;
+  province?: string;
+  phone?: string;
+  email?: string;
+  description?: string;
+  createAt?: string;
+  updateAt?: string;
+  latitude?: number;
+  longitude?: number;
+}
+
+export interface CreateStationRequest {
+  name: string;
+  locationId: number;
+  status: number;
+}
+
+export interface UpdateStationRequest {
+  name: string;
+  locationId: number;
+  status: number;
+}
+
+export interface StationResponse {
+  data: Station[];
+  page: number;
+  amount: number;
+  totalPage: number;
+  totalCount: number;
+}
+
+export interface Role {
+  id: number;
+  name: string;
+  description: string;
+  permission: boolean;
+  isDeleted: boolean;
+}
+
+export interface RoleResponse {
+  data: Role[];
+  page: number;
+  amount: number;
+  totalPage: number;
+  totalCount: number;
+}
+
+export interface CreateRoleRequest {
+  name: string;
+  description: string;
+  permission: boolean;
+}
+
+export interface UpdateRoleRequest {
+  name: string;
+  description: string;
+  permission: boolean;
+}
+
+export interface Bus {
+  id: number;
+  busId: string;
+  name: string;
+  numberPlate: string;
+  typeBusId: number;
+  companyName: string;
+  isDeleted: boolean;
+}
+
+export interface BusResponse {
+  data: Bus[];
+  page: number;
+  amount: number;
+  totalPage: number;
+  totalCount: number;
+}
